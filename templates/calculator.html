@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='calculator.css')}}">
+    <script src="{{url_for ('static' , filename='calculator.js')}}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Calculator</title>
+    <script>
+
+        var state='';
+
+        var last_number=0;
+        var next_number=0;
+
+    </script>
+</head>
+<body>
+
+    <div class="container">
+        <div class="display">
+            0
+        </div>
+        <div class="buttons">
+            <div class="row-1"> 
+                <div class="ac" >AC</div>
+                <div class="delete" >DEL</div>
+                <div class="states" >%</div>
+                <div class="states" >/</div>
+            </div>
+            
+            <div class="row-2">
+                <div class="number" >7</div>
+                <div class="number" >8</div>
+                <div class="number" >9</div>
+                <div class="states">*</div>
+            </div>
+
+            <div class="row-3">
+                <div class="number" >4</div>
+                <div class="number" >5</div>
+                <div class="number" >6</div>
+                <div class="states">-</div>
+            </div>
+
+            <div class="row-4">
+                <div class="number" >1</div>
+                <div class="number" >2</div>
+                <div class="number">3</div>
+                <div class="states">+</div>
+            </div>
+
+            <div class="row-5">
+                <div class="number">0</div>
+                <div class="number">.</div>
+                <div class="equal" onclick="eq()">=</div>
+                <div class="sci">Sci</div>
+            </div>
+           
+        </div>
+
+        
+    </div>
+
+    <div class="container-2">
+        <div class="row">
+            <div class="states">^</div>
+            <div class="states">sqrt</div>
+        </div>
+        <div class="row">
+            <div class="states">sin</div>
+            <div class="states">cos</div>
+        </div>
+        <div class="row">
+            <div class="states">tg</div>
+            <div class="states">ctg</div>
+        </div>
+    </div>
+
+
+    
+
+    <script>
+
+        function eq(){
+            next_number=parseInt($('.display').html())
+            if (state=='+'){
+                plus(last_number, next_number)
+            }
+            else if(state=="-"){
+                 difference(last_number, next_number)
+            }
+            else if(state=="/"){
+                divide(last_number, next_number)
+            }
+            else if(state=="%"){
+                modulus(last_number, next_number)
+            }
+            else if (state=="*"){
+                multiply(last_number, next_number)
+            }
+            else if(state=="^"){
+                square(last_number, next_number)
+            }
+            else if (state=="sqrt"){
+                sqrt(last_number, next_number)
+            }
+            else if (state=="sin"){
+                sin(last_number)
+            }
+            else if (state=="cos"){
+                cos(last_number)
+            }
+            else if (state=="tg"){
+                tg(last_number)
+            }
+            else if (state=="ctg"){
+                ctg(last_number)
+            }
+
+            
+            state=''
+        }
+
+
+
+       $('.number').click(function(){
+           let number=$(this).html()
+           
+               var cd = $('.display').html()
+                if (parseFloat(cd)!=0){
+                    $('.display').html(cd+number)
+                }
+                else{
+                    $('.display').html(number)
+                }
+            
+       })
+
+
+
+       $('.states').click(function(){
+           state=$(this).html()
+            if (state!=''){
+                last_number=parseFloat($('.display').html())
+                
+            }
+            $('.display').html(' ')
+       })
+
+
+
+
+       $('.ac').click(function(){
+            $('.display').html(0)
+       })
+
+
+       $('.delete').click(function(){
+            var delete_number=$('.display').html()
+            if (delete_number==0){
+                $('.display').html(0)
+            }else{
+                if (delete_number.length==1){
+                    $('.display').html('0')
+                    return
+                }
+                delete_number=delete_number.substring(0,delete_number.length-1)
+                $('.display').html(delete_number)
+            }
+           
+       })
+
+        let clicked=true
+
+       $('.container-2').hide()
+       $('.sci').click(function(){
+            if (clicked){
+                $('.container-2').fadeIn(200)
+                clicked=false
+
+            }
+            else{
+                $('.container-2').fadeOut(200)
+                $('.container-2').css('display', 'none')
+                clicked=true
+            }
+           
+
+       })
+
+
+    </script>
+
+</body>
+</html>

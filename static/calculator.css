@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat',sans-serif;
+    box-sizing: border-box;
+    font-weight: 700;
+    color: rgb(6, 6, 46);
+    user-select: none;
+}
+
+body{
+    background-color: rgb(39, 185, 185);
+}
+
+
+.container{
+    width: 40%;
+    height: 90vh;
+    background-image: linear-gradient(to right bottom, rgba(255,255,255, 0.2) 0%, rgba(255,255,255,0.4) 100% );
+    box-shadow: 2px 2px 8px rgb(11, 104, 112) ;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin:100px auto;
+    z-index: 1;
+}
+
+.display{
+    width: 80%;
+    display: flex;
+    margin:0% auto;
+    height: 20%;
+    background-color: rgba(255,255,255,0.5);
+    font-size: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 2px 2px 4px 2px rgb(224, 224, 224);
+}
+
+
+.row-1{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 20%;
+}
+.row-2{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 20%;
+}
+.row-3{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 20%;
+}
+.row-4{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 20%;
+}
+.row-5{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 20%;
+}
+
+
+
+.buttons{
+    width: 90%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+
+
+.row-1 div{
+    width: 25%;
+    height: 100%;
+    font-size: 40px;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+.row-2 div{
+    width: 25%;
+    height: 100%;
+    font-size: 40px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.6s ease;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+
+}
+.row-3 div{
+    width: 25%;
+    height: 100%;
+    font-size: 40px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.6s ease;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.row-4 div{
+    width: 25%;
+    height: 100%;
+    font-size: 40px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.6s ease;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.row-5 div{
+    width: 33%;
+    height: 100%;
+    font-size: 40px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.6s ease;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.row-1 div:hover{
+    background-color: rgba(255,255,255,0.6);
+    color: rgb(39, 39, 182);
+}
+.row-2 div:hover{
+    background-color: rgba(255,255,255,0.6);
+    color: rgb(39, 39, 182);
+}
+.row-3 div:hover{
+    background-color: rgba(255,255,255,0.6);
+    color: rgb(39, 39, 182);
+}
+.row-4 div:hover{
+    background-color: rgba(255,255,255,0.6);
+    color: rgb(39, 39, 182);
+}
+.row-5 div:hover{
+    background-color: rgba(255,255,255,0.6);
+    color: rgb(39, 39, 182);
+}
+
+
+
+
+.container-2{
+    z-index: 0;
+    width: 20%;
+    height: 45vh;
+    position: absolute;
+    top: calc(90vh + 100px - 45vh);
+    left: 70%;
+    transition: all 0.4s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-image: linear-gradient(to right bottom, rgba(255,255,255, 0.2) 0%, rgba(255,255,255,0.4) 100% );
+    box-shadow: 2px 2px 8px rgb(11, 104, 112);
+}
+
+
+
+.container-2 div{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    z-index: 2;
+    position: relative;
+
+}
+
+.row div{
+    font-size: 40px;
+    width: 50%;
+    padding: 44px 5px 44px 20px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    z-index: 2;
+    position: relative;
+}
+
+
+.container-2 .row .states:hover{
+    background-color: rgba(255,255,255,0.6);
+    color: rgb(39, 39, 182);
+}
